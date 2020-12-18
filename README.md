@@ -2,19 +2,6 @@
 
 Extend git commit message from angular style
 
-
-# Commit Message Format
-All Commit Message Format **MUST** meet this Text Format:
-
-```
-[:<Emoji>: ][<Type>[(<Scope>)]: ]<Subject>
-[<BLANK LINE>]
-[<Message Body>]
-[<BLANK LINE>]
-[<Message Footer>]
-```
-
-
 # Types
 
 | Type          | Description |
@@ -40,43 +27,6 @@ All Commit Message Format **MUST** meet this Text Format:
 | `release`     | for publishing commit |
 | `wip`         | for work in progress commit |
 | `chore`       | for other operations commit |
-
-
-If the prefix is the below types, it will appear in the changelog. 
-
-- `new` (`feature`)
-- `bug`
-- `performance`
-- `security`
-- `improvement`
-- `deprecated`
-- `breaking`
-
-
-# Scope
-The scope could be anything specifying place or category of the commit change. For example $location, $browser, $compile, $rootScope, ngHref, ngClick, ngView, feature1, etc...
-
-
-# Subject
-The subject contains succinct description of the change:
-
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* don't capitalize first letter
-* no dot (.) at the end
-
-
-# Message Body
-Just as in the **Subject**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
-
-
-# Message Footer
-The Message Footer should contain any information about **Notes** and also Message Footer should be **recommended** [GitHub Issue](https://github.com/features#issues) ID Reference, Ex. `Issue #27`, `Fixes #1`, `Closes #2`, `Resolves #3`.
-
-**Notes** should start with the word `NOTE:` with a space or two newlines. The rest of the commit message is then used for this.
-
-
-# Revert
-If the commit reverts a previous commit, it should begin with revert:, followed by the header of the reverted commit. In the body it should say: This reverts commit <hash>., where the hash is the SHA of the commit being reverted.
 
 
 # Emojis
@@ -132,52 +82,3 @@ new:
 :star: new(graphite): add 'graphiteWidth' option
 ```
 
-bug fix:
-```
-:bug: fix(graphite): stop graphite breaking when width < 0.1
-
-Closes #28
-```
-
-improve performance:
-```
-:chart_with_upwards_trend: performance(graphite): remove graphiteWidth option
-
-The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
-```
-
-revert:
-```
-:back: revert: new: add 'graphiteWidth' option
-
-This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-```
-
-# Support tools
-
-## conventional-changelog
-
-You can use with `conventional-changelog-cli` and `conventional-github-releaser`.
-
-e.g. conventional-changelog-cli:
-
-    $ npm i --save-dev git://github.com/kazupon/git-commit-message-convention.git
-    $ conventional-changelog -i CHANGELOG.md -s -n ./node_modules/git-commit-message-convention/convention.js -r 0
-
-e.g. conventional-github-releaser:
-
-    $ conventional-github-releaser -n ./node_modules/git-commit-message-convention/convention.js -r 0
-
-
-# TODO
-- [x] support conventional commit tools (e.g. conventional-changelog)
-- [ ] lint
-- [ ] cli
-- [ ] create a conventional commit tools with `golang`
-
-
-# License
-
-## MIT
-
-[MIT](http://opensource.org/licenses/MIT)
